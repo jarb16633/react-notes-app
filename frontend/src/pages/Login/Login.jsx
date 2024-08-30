@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
+import PasswordInput from "../../components/Input/PasswordInput";
 
 const Login = () => {
   return (
@@ -13,6 +14,9 @@ const Login = () => {
               <h4 className="text-2xl mb-7">Login</h4>
 
               <input type="text" placeholder="Email" className="input-box" />
+
+              <PasswordInput />
+
               <button type="submit" className="btn-primary">
                 Login
               </button>
