@@ -27,7 +27,7 @@ const PasswordInput = ({ value, onChange, placeholder }) => {
         <FaRegEye
           onClick={toggleShowPassword}
           size={20}
-          className="text-dark/50 cursor-pointer"
+          className="text-slate-400 cursor-pointer"
         />
       )}
     </div>
