@@ -1,13 +1,21 @@
 import TagInput from "../../components/Input/TagInput";
+import PropTypes from "prop-types";
 import { useState } from "react";
+import { MdClose } from "react-icons/md";
 
-const AddEditNotes = () => {
+const AddEditNotes = ({ onClose }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [tags, setTags] = useState([]);
 
   return (
-    <div>
+    <div className="relative">
+      <button
+        className="w-10 h-10 rounded-full flex items-center justify-center absolute -top-3 -right-3 hover:bg-dark"
+        onClick={onClose}
+      >
+        <MdClose className="text-xl text-slate-400 " />
+      </button>
       <div className="flex flex-col gap-2">
         <label className="input-label">TITLE</label>
         <input
@@ -41,6 +49,10 @@ const AddEditNotes = () => {
       </button>
     </div>
   );
+};
+
+AddEditNotes.propTypes = {
+  onClose: PropTypes.func.isRequired,
 };
 
 export default AddEditNotes;
