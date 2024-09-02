@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+import PropTypes from "prop-types";
 
 const PasswordInput = ({ value, onChange, placeholder }) => {
+  PasswordInput.propTypes = {
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    placeholder: PropTypes.string,
+  };
+
   const [showPassword, setShowPassword] = useState(false);
 
   const toggleShowPassword = () => {

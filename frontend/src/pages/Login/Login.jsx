@@ -17,8 +17,15 @@ const Login = () => {
       return;
     }
 
+    if (!password) {
+      setError("Please enter your password.");
+      return;
+    }
+
     setError("");
   };
+
+  // Login API Call
 
   return (
     <div>
@@ -28,7 +35,7 @@ const Login = () => {
         <div className="flex justify-center items-center mt-28">
           <div className="bg-white px-7 py-10 rounded-lg shadow-sm w-96 border">
             <form onSubmit={handleLogin}>
-              <h4 className="text-2xl mb-7">Login</h4>
+              <h4 className="text-2xl mb-7 text-center font-medium">Login</h4>
               <input
                 type="text"
                 placeholder="Email"
@@ -46,6 +53,7 @@ const Login = () => {
               <button type="submit" className="btn-primary">
                 Login
               </button>
+
               <p className="text-sm text-center mt-4">
                 Don&apos;t have an account?{" "}
                 <Link
